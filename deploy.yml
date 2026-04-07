@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zomato
+  labels:
+    app: zomato
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: zomato
+  template:
+    metadata:
+      labels:
+        app: zomato
+    spec:
+      containers:
+      - name: mydockerproject
+        image: sueesh144/party-den1:partyimage
+        ports:
+        - containerPort: 3000
